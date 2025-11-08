@@ -1,0 +1,47 @@
+# Educational documentation
+KNN_METHODOLOGY_GUIDE.md
+
+# Old/backup notebooks
+heart-disease-old.ipynb
+*.ipynb-old
+*.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.hdVenv/
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated files
+*.html
+*.png
+*.jpg
+*.pdf
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
