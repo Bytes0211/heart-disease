@@ -11,11 +11,39 @@ A comprehensive machine learning project for predicting heart disease using k-Ne
 - **Model Evaluation** 📈: Multiple metrics including ROC curves, confusion matrices, and cross-validation
 - **Visualization** 📉: Distribution plots, correlation heatmaps, and performance visualizations
 
-## 📥 Installation
+## 🛠️ Environment Setup
 
+### Using Make (Recommended)
 ```bash
+make setup     # Creates virtual environment and installs dependencies
+make activate  # Activates existing venv or prompts to create new one
+```
+
+### Manual Setup
+```bash
+python3 -m venv .hdVenv
+source .hdVenv/bin/activate
 pip install -r requirements.txt
 ```
+
+Note: The project uses `.hdVenv` as the default virtual environment name.
+
+## 📥 Quick Start
+
+1. **Setup environment** (first time):
+   ```bash
+   make setup
+   ```
+
+2. **Activate environment**:
+   ```bash
+   source .hdVenv/bin/activate
+   ```
+
+3. **Run analysis**:
+   ```bash
+   jupyter notebook heart-disease.ipynb
+   ```
 
 ## 🚀 Usage
 
@@ -23,6 +51,13 @@ The main analysis is contained in the Jupyter notebook:
 
 ```bash
 jupyter notebook heart-disease.ipynb
+```
+
+### Cleanup
+
+Remove temporary files and caches:
+```bash
+make clean  # Removes build/, dist/, __pycache__, etc.
 ```
 
 ### Analysis Pipeline
@@ -69,7 +104,10 @@ heart-disease/
 ├── heart-disease.ipynb        # Main analysis notebook
 ├── heart-disease.csv          # Dataset
 ├── requirements.txt           # Project dependencies
-└── README.md                  # Project documentation
+├── Makefile                   # Build and environment management
+├── README.md                  # Project documentation
+├── WARP.md                    # AI assistant guidance
+└── .hdVenv/                   # Virtual environment (not tracked)
 ```
 
 ## 📋 Requirements
@@ -154,6 +192,11 @@ See [requirements.txt](requirements.txt) for full dependency list.
 - **AUC Score**: Overall discrimination ability
 - **Cross-Validation**: 10-fold CV for generalization assessment
 
+**Medical Context Priority:**
+- **Sensitivity (Recall)** is prioritized over specificity
+- False negatives (missed disease) are more dangerous than false positives
+- This influences threshold selection in ROC analysis
+
 **k vs Accuracy Plot:**
 - Visualizes model performance across different k values
 - Identifies optimal balance between bias and variance
@@ -213,14 +256,14 @@ See [requirements.txt](requirements.txt) for full dependency list.
 
 - Compare k-NN with other algorithms (Random Forest, SVM, Logistic Regression)
 - Feature importance analysis to identify key predictors
-- SMOTE or other techniques for handling class imbalance
+- Further address class imbalance if needed (currently 55/45 split)
 - Ensemble methods for improved performance
 - External validation on independent dataset
 - Pipeline implementation for production deployment
 
-## ⚠️ Requirements
+## ⚠️ Prerequisites
 
-- Python 3.8+ recommended
+- Python 3.8+ required (3.12.3 currently used)
 - Jupyter Notebook or JupyterLab
 - Dataset file `heart-disease.csv` must be present in project root
 
