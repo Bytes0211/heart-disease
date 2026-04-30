@@ -77,3 +77,31 @@ Default editor for commits: WARP (per user preferences)
 - `KNN_METHODOLOGY_GUIDE.md` - Educational documentation (not for version control)
 - `heart-disease-old.ipynb` - Backup notebook
 - Standard Python/Jupyter ignores (`.ipynb_checkpoints/`, `__pycache__/`)
+
+## Git Commit Convention
+
+Use conventional commit format: `type(scope): brief description`
+
+### Commit Types
+- **feat**: New feature or functionality
+- **fix**: Bug fix
+- **docs**: Documentation changes
+- **refactor**: Code refactoring without functionality change
+- **test**: Adding or updating tests
+- **chore**: Maintenance tasks (dependencies, config, infrastructure)
+- **perf**: Performance improvements
+- **style**: Code style/formatting changes
+
+### Project Scopes
+- **notebook**: Jupyter notebook updates
+- **ml**: Machine learning model changes
+- **data**: Dataset and preprocessing
+- **sklearn**: Scikit-learn configuration
+- **eda**: Exploratory data analysis
+
+### Guidelines
+- Keep first line under 72 characters
+- Use imperative mood ("add" not "added")
+- Always include: `Co-Authored-By: Warp <agent@warp.dev>`
+- Scope is optional but recommended
+- Reference issues when applicable: `fix(ml): improve k-NN hyperparameter tuning (#123)`
